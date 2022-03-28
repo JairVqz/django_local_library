@@ -1,21 +1,15 @@
 from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from django.contrib.auth.decorators import permission_required
-
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-#from django.url import reverse
 from django.urls import reverse
-
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Author
 from django.contrib.auth.mixins import PermissionRequiredMixin
-
 import datetime
-
 from .forms import RenewBookForm
 # Create your views here.
 from .models import Book, Author, BookInstance, Genre
@@ -60,7 +54,6 @@ class AuthorListView(generic.ListView):
     """Generic class-based list view for a list of authors."""
     model = Author
     paginate_by = 10
-
 
 class AuthorDetailView(generic.DetailView):
     """Generic class-based detail view for an author."""
